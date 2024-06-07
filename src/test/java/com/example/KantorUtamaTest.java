@@ -10,7 +10,7 @@ public class KantorUtamaTest {
         KantorUtama ku = new KantorUtama();
         String actual = ku.tambahCabang("Purworejo", 10000000);
         String expected = "Cabang Purworejo berhasil ditambahkan.";
-        assertEquals(expected, actual);
+        assertEquals(expected, actual); 
     }
     
     @Test
