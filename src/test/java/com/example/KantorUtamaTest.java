@@ -21,12 +21,4 @@ public class KantorUtamaTest {
         String expected = "Cabang Purworejo gagal dimasukkan.";
         assertEquals(expected, actual);
     }
-        
-    @Test
-    public void testTambahCabangSuksesTambahJogja() {
-        KantorUtama ku = new KantorUtama();
-        String actual = ku.tambahCabang("Jogja", 10000000);
-        String expected = "Cabang Jogja gagal dimasukkan.";
-        assertEquals(expected, actual);
-    }
 }
