@@ -1,27 +1,15 @@
-# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
-# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
-
-name: CI/CD
+name: Java CI with Maven - Nagif_1302210130
 
 on:
-  push: 
-    branches: [main]
+  push:
+    branches: [ "main" ]
   pull_request:
-    branches: [main]
-  release:
-    types: [created]
-    
-permissions:
-  contents: read
-  issues: write
+    branches: [ "main" ]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
 
     steps:
     - uses: actions/checkout@v4
@@ -30,18 +18,19 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
-
+        cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
+      #inspection
     - name: Build and analyze
       env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_UAS }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+        SONAR_TOKEN: ${{ secrets.SONAR_UAS }}
       run: mvn -B verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=phusallver -Dsonar.projectKey=phusallver_uas
     
+      #deployment
+        
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
