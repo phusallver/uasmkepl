@@ -8,8 +8,8 @@ public class KantorUtamaTest {
     @Test
     public void testTambahCabangBerhasilTambah() {
         KantorUtama ku = new KantorUtama();
-        String actual = ku.tambahCabang("Purworejo", 10000000);
-        String expected = "Cabang Purworejo berhasil ditambahkan.";
+        String actual = ku.tambahCabang("Purworejoo", 10000000);
+        String expected = "Cabang Purworejoo berhasil ditambahkan.";
         assertEquals(expected, actual);
     }
     
