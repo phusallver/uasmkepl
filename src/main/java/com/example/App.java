@@ -18,6 +18,46 @@ public class App
         
         ku.inputCabang();
         ku.printData();
+        
+        ku.setDivisiPerCabang(); 
+        ku.inputCabang();
+        ku.printData();
+        
+        ku.inputCabang();
+        ku.printData();
+        
+        ku.inputCabang();
+        ku.printData();
+        
+        ku.setDivisiPerCabang(); 
+        ku.inputCabang();
+        ku.printData();
+        
+        ku.inputCabang();
+        ku.printData();
+        
+        ku.inputCabang();
+        ku.printData();
+        
+        ku.setDivisiPerCabang(); 
+        ku.inputCabang();
+        ku.printData();
+        
+        ku.inputCabang();
+        ku.printData();
+        
+        ku.inputCabang();
+        ku.printData();
+        
+        ku.setDivisiPerCabang(); 
+        ku.inputCabang();
+        ku.printData();
+        
+        ku.inputCabang();
+        ku.printData();
+        
+        ku.inputCabang();
+        ku.printData();
             
         System.out.println("");
     }
