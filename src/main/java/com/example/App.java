@@ -9,7 +9,7 @@ public class App
     public static void main( String[] args )
     {
         KantorUtama ku = new KantorUtama();
-        ku.setDivisiPerCabang();
+        ku.setDivisiPerCabang(); 
         ku.inputCabang();
         ku.printData();
         
