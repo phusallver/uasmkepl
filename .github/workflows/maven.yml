@@ -39,7 +39,7 @@ jobs:
     - name: Build and analyze
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR }}
+          SONAR_TOKEN: ${{ secrets.SONAR_UAS }}
       run: mvn -B verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=phusallver -Dsonar.projectKey=phusallver_uasmkepl
     
     - name: Publish to GitHub Packages Apache Maven
